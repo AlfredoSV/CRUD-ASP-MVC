@@ -1,0 +1,45 @@
+﻿{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+form {
+    /*box-shadow: 4px 4px 4px 4px #ccc;*/
+    width: 100%;
+    max-width: 430px;
+    padding: 30px;
+    margin: auto;
+    text-align:center;
+    margin-top:100px;
+    background-color:#ffffff;
+    max-height: 440px;
+    min-height:250px;
+    padding-bottom:40px;
+    border-radius: 30px;
+}
+
+body{
+    background-color:#c4c4c4;
+}
+
+
+img{
+    width:130px;
+    height:130px;
+}
+
+footer{
+    bottom:0;
+    position:absolute;
+    text-align:center;
+    width:100%;
+}
+
+
+input[type="text"], input[type="password"]{
+    background-color:#e4e0a4;
+}
+
+
+

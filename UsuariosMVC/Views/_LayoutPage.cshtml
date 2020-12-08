@@ -1,0 +1,66 @@
+﻿@using System.Web.Mvc;
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/StyleSheetLayout.css" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom border-dark shadow-sm">
+        <a class="navbar-brand" href="/Home/Ingresar">Registro alumnos</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    @Html.ActionLink("Registrar", "Ingresar", null, new { @class = "nav-link", @id = "registrar" })
+
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Listar", "ListarAlumnos", null, new { @class = "nav-link", @id = "listar" })
+
+
+                </li>
+
+            </ul>
+
+            <span class="text-decoration-none bg-transparent text-white-50 rounded">
+                @Html.ActionLink("Cerrar sesión", "CerrarSesion", null, new { @class = "nav-link" })
+            </span>
+
+        </div>
+    </nav>
+    <div>
+        @RenderBody()
+    </div>
+
+
+    <footer class="footer-copyright text-center py-3">
+        Alfredo - 2020
+    </footer>
+
+    <script src="~/scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/scripts/jquery.validate.min.js"></script>
+    <script src="~/scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    @RenderSection("scripts", required: false);
+
+
+    <script>
+
+        feather.replace();
+
+    </script>
+
+</body>
+</html>

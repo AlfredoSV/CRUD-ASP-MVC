@@ -1,0 +1,52 @@
+﻿@model UsuariosMVC.Models.Alumno
+@{
+    ViewBag.Title = "DetalleAlumno";
+    Layout = "~/Views/_LayoutPage.cshtml";
+}
+
+
+<div class="jumbotron alert-info m-2">
+    <h1 class="display-4">Información general del alumno</h1>
+    <hr class="my-4">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3>Nombre: @Model.Nombre</h3>
+                <br />
+                <h3>Apellido Paterno: @Model.ApellidoP</h3>
+                <br />
+                <h3>Apelliod Materno: @Model.ApellidoM</h3>
+                <br />
+                <h3>Edad: @Model.Edad</h3>
+                <br />
+                <h3>Correo: @Model.Email</h3>
+                <br />
+                <h3>Número 1: @Model.Num1</h3>
+                <br />
+                <h3>Número 2: @Model.Num2</h3>
+
+            </div>
+
+            
+
+           
+        </div>
+    </div>
+   
+    <p class="lead mt-5">
+        <a class="btn btn-success btn-lg" href="/Home/ListarAlumnos" role="button">Regresar</a>
+    </p>
+
+</div>
+
+@section scripts {
+
+    <script>
+
+        const arregloLi = document.getElementsByTagName('li');
+
+        arregloLi[0].classList.remove('active');
+        arregloLi[1].classList.remove('active');
+
+    </script>
+}

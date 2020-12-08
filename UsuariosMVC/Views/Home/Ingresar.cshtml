@@ -1,0 +1,204 @@
+﻿@model UsuariosMVC.Models.Alumno
+@{
+    Layout = "~/Views/_LayoutPage.cshtml";
+}
+
+
+
+<div class="container-fluid">
+
+    <div class="row text-center p-3 rounded">
+        <div class="col bg-info text-white">
+            <h2><i data-feather="plus"></i> &nbsp;Registro de alumnos</h2>
+        </div>
+    </div>
+
+    <form method="post" action="~/Home/Alta" class="pb-5 pr-5 pl-5">
+
+        <div class="form-row">
+            <div class="col-md-12 text-center">
+                <h4><i data-feather="folder"></i> &nbsp;Información general</h4>
+                <hr style="width: 100%; color: black; height: 1px; background-color:black;" />
+
+            </div>
+        </div>
+
+
+        <div class="form-row">
+            <div class="col-md-4 form-group">
+                @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control", maxlength = "30", @placeholder = "Nombre" })
+                @Html.ValidationMessageFor(m => m.Nombre, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="col-md-4 form-group">
+                @Html.TextBoxFor(m => m.ApellidoP, new { @class = "form-control", maxlength = "30", @placeholder = "Apellido paterno" })
+                @Html.ValidationMessageFor(m => m.ApellidoP, "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="col-md-4 form-group">
+                @Html.TextBoxFor(m => m.ApellidoM, new { @class = "form-control", maxlength = "30", @placeholder = "Apellido materno" })
+                @Html.ValidationMessageFor(m => m.ApellidoM, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-6 form-group">
+                @Html.TextBoxFor(m => m.Edad, new { @class = "form-control", maxlength = "30", @placeholder = "Edad" })
+                @Html.ValidationMessageFor(m => m.Edad, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="col-md-6 form-group">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", maxlength = "30", @placeholder = "Correo electrónico" })
+                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-6 form-group">
+                @Html.DropDownList("Carrera", new List<SelectListItem>
+                {
+                    new SelectListItem { Text = "Lic. en Derecho", Value = "1"},
+                    new SelectListItem { Text = "Ing. en SIstemas Computacionales", Value = "2"},
+                    new SelectListItem { Text = "Negocios internacionales", Value = "3"},
+                    new SelectListItem { Text = "Ing. civil", Value = "4"}
+                }, "Seleccionar un carrera", new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Carrera, "", new { @class = "text-danger" })
+
+
+            </div>
+
+            <div class="col-md-6 form-group">
+
+                @Html.TextBoxFor(m => m.Campus, new { @class = "form-control", maxlength = "30", @placeholder = "Campús" })
+                @Html.ValidationMessageFor(m => m.Campus, "", new { @class = "text-danger" })
+
+
+            </div>
+        </div>
+
+
+        <div class="form-row">
+            <div class="col-md-6 form-group">
+                @Html.TextBoxFor(m => m.HermanosInstitu, new { @class = "form-control", maxlength = "30", @placeholder = "¿Tiene hermanos en la institución?" })
+                @Html.ValidationMessageFor(m => m.HermanosInstitu, "", new { @class = "text-danger" })
+
+
+            </div>
+            <div class="col-md-6 form-group">
+                @Html.TextBoxFor(m => m.PromedioMedioSup, new { @class = "form-control", maxlength = "30", @placeholder = "Promedio de nivel medio superior" })
+                @Html.ValidationMessageFor(m => m.PromedioMedioSup, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-md-12 text-center">
+                <h4><i data-feather="home"></i> &nbsp;Domicilio</h4>
+                <hr style="width: 100%; color: black; height: 1px; background-color:black;" />
+
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-md-6 form-group">
+                @Html.TextBoxFor(m => m.Calle, new { @class = "form-control", maxlength = "30", @placeholder = "Calle" })
+                @Html.ValidationMessageFor(m => m.Calle, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="col-md-6 form-group">
+                @Html.TextBoxFor(m => m.Colonia, new { @class = "form-control", maxlength = "30", @placeholder = "Colonia" })
+                @Html.ValidationMessageFor(m => m.Colonia, "", new { @class = "text-danger" })
+
+
+
+
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-md-6 form-group">
+                @Html.TextBoxFor(m => m.NoExt, new { @class = "form-control", @placeholder = "No.Ext" })
+                @Html.ValidationMessageFor(m => m.NoExt, "", new { @class = "text-danger" })
+
+
+
+
+            </div>
+            <div class="col-md-6 form-group">
+                @Html.TextBoxFor(m => m.NoInt, new { @class = "form-control", @placeholder = "No.Int" })
+                @Html.ValidationMessageFor(m => m.NoInt, "", new { @class = "text-danger" })
+
+
+
+
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-md-6 form-group">
+                @Html.TextBoxFor(m => m.CP, new { @class = "form-control", @placeholder = "CP" })
+                @Html.ValidationMessageFor(m => m.CP, "", new { @class = "text-danger" })
+
+
+
+
+            </div>
+            <div class="col-md-6 form-group">
+                @Html.TextBoxFor(m => m.Manzana, new { @class = "form-control", @placeholder = "Manzana" })
+                @Html.ValidationMessageFor(m => m.Manzana, "", new { @class = "text-danger" })
+
+
+
+
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-md-4 form-group">
+                @Html.TextBoxFor(m => m.Num1, new { @class = "form-control", maxlength = "10", @placeholder = "Número 1" })
+                @Html.ValidationMessageFor(m => m.Num1, "", new { @class = "text-danger" })
+
+
+
+
+            </div>
+            <div class="col-md-4 form-group">
+                @Html.TextBoxFor(m => m.Num2, new { @class = "form-control", maxlength = "10", @placeholder = "Número 2" })
+                @Html.ValidationMessageFor(m => m.Num2, "", new { @class = "text-danger" })
+
+
+
+
+            </div>
+            <div class="col-md-4 form-group">
+                @Html.TextBoxFor(m => m.Num3, new { @class = "form-control", maxlength = "10", @placeholder = "Número 3" })
+                @Html.ValidationMessageFor(m => m.Num3, "", new { @class = "text-danger" })
+
+
+
+
+            </div>
+        </div>
+
+        <div class="form-row mt-5">
+            <div class="col-md-12 form-group">
+                <button class="btn btn-success btn-lg btn-block"><i data-feather="plus-circle"></i> &nbsp;Alta</button>
+
+            </div>
+
+        </div>
+
+    </form>
+
+    @section scripts {
+        <script>
+
+            const arregloLi = document.getElementsByTagName('li');
+
+            arregloLi[1].classList.remove('active');
+            arregloLi[0].classList.add('active');
+
+        </script>
+    }
+
+</div>

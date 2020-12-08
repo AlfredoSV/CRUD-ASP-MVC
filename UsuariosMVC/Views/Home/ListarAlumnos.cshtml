@@ -1,0 +1,77 @@
+﻿@model List<UsuariosMVC.Models.Alumno>
+
+
+@{
+    ViewBag.Title = "ListarAlumnos";
+    Layout = "~/Views/_LayoutPage.cshtml";
+}
+
+
+<div class="container-fluid">
+
+    <div class="row text-center p-3 rounded">
+        <div class="col bg-info text-white">
+            <h2><i data-feather="folder"></i> &nbsp;Listar alumnos</h2>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <td>Nombre</td>
+                        <td>Apellido paterno</td>
+                        <td>Apellido materno</td>
+                        <td>Carrera</td>
+                        <td>Email</td>
+                        <td>Acciones</td>
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Nombre</td>
+                            <td>@item.ApellidoP</td>
+                            <td>@item.ApellidoM</td>
+                            <td>@item.Carrera</td>
+                            <td>@item.Email</td>
+                            <td>
+                                @Html.ActionLink("Modificar", "Modificar", routeValues: new { id_Alumno = @item.Id_Alumno })
+
+                                <br />
+                                @Html.ActionLink("Eliminar", "BorrarAlumno", routeValues: new { id_Alumno = @item.Id_Alumno })
+                                <br />
+
+                                @Html.ActionLink("Detalle", "DetalleAlumno", routeValues: new { id_Alumno = @item.Id_Alumno })
+
+
+                            </td>
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    @section scripts {
+
+    <script>
+
+        const arregloLi = document.getElementsByTagName('li');
+
+        arregloLi[0].classList.remove('active');
+        arregloLi[1].classList.add('active');
+
+    </script>
+    }
+
+</div>
+
